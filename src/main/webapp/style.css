@@ -1,0 +1,100 @@
+body{
+	background-image: url(img/bts.jpg);
+	background-attachment: fixed;
+	background-size: 100%;
+}
+#header{
+	font-family: serif;
+	font-size: 25pt;
+	color: black;
+	text-align: center;
+	margin: 0 auto;
+	background-color: rgba(228, 197, 166, 0.9);
+	border-radius: 10px;
+	width: 900px;
+}
+
+.child{
+	width: 100%;
+	padding: 0;
+	margin: 8px 0;
+	text-align: center;
+	font-family: sans-serif;
+}
+
+#main-area{
+	border-radius: 10px;
+	padding: 5px;
+	background-color: rgba(225, 192, 11, 0.8);
+}
+
+#table-form{
+	margin: auto;
+	text-align: center;
+}
+
+form {
+	margin: 0;
+}
+
+#form{
+	width: 100%;
+}
+.exception-field{
+	color: red;
+	font-size: 11pt;
+}
+
+#subBtn,#clrBtn{
+	width: 30%;
+	margin: 4px 35%;
+	padding: 5px;
+}
+#subBtn:hover,#clrBtn:hover{
+	color: red;
+}
+
+#table-main{
+	width: 60%;
+	margin:auto 20%;
+}
+
+#table-result {
+	font-family: sans-serif;
+	background-color: rgba(61, 171, 255, 0.8);
+	text-align: center;
+	width: 100%;
+	margin: 8px auto;
+	border-collapse: collapse;
+	color: white;
+	border: 2px solid transparent;
+}
+#table-result th,#table-result td{
+	border: 2px solid transparent;
+
+}
+
+input[type="radio"]:hover {
+	width: 15px;
+	height: 15px;
+	color: blue;
+}
+
+input[type="text"]::placeholder {
+	text-align: center;
+}
+
+input[type="text"]{
+	color: blue;
+}
+
+input[type="radio"]:checked + span{
+	color: blue;
+}
+input[type="radio"]:hover + span{
+	color: blue;
+}
+
+.radio-button label{
+	margin:2px 2px;
+}
