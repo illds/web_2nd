@@ -12,6 +12,7 @@ function gotData() {
         if (status == 200) {
             document.getElementById("resultBox").innerHTML = request.responseText
         }
+        drawDot()
     }
 }
 
@@ -19,7 +20,6 @@ document.getElementById("subBtn").onclick = function () {
     getFormData()
     if(sendRequestHandle()){
         setCoordinates()
-        setVisiblePoint()
     }
 };
 
@@ -31,7 +31,7 @@ function setCoordinates(){
 document.addEventListener('click', function (e) {
     if (e.target.getAttribute('id') == 'clrBtn') {
         sendRequestClear()
-        unsetVisiblePoint()
+        deleteDots()
     }
 });
 
@@ -67,7 +67,6 @@ document.querySelectorAll('.input').forEach(function (item) {
             getFormData()
             if(sendRequestHandle()){
                 setCoordinates()
-                setVisiblePoint()
             }
         }
 
@@ -125,10 +124,22 @@ function detectClick() {
         convertCoordinates()
         if (validateCoordinates()){
             sendRequestHandle()
-            setVisiblePoint()
         }
-    }else{
+    } else {
         alert("Check the value of R")
+    }
+}
+
+function drawDot() {
+    let lg = document.getElementById('check')
+    lg.insertAdjacentHTML('afterend', '<circle class="point" r="5" cx="' + (cordX+150) +
+        '" cy="'+(150-cordY)+'" fill-opacity="0.7" fill="red" stroke="firebrick" visibility="visible"></circle>')
+}
+
+function deleteDots(){
+    let e = document.getElementsByClassName("point");
+    while(e.length) {
+        e[0].parentNode.removeChild(e[0]);
     }
 }
 
@@ -143,7 +154,7 @@ function unsetVisiblePoint(){
     let point = document.getElementById("point")
     point.setAttribute('cx',150)
     point.setAttribute('cy',150)
-    point.setAttribute("visibility","visible")
+    point.setAttribute("visibility","hidden")
 }
 
 function convertCoordinates() {
